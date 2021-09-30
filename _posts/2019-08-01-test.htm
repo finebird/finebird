@@ -1,6 +1,15 @@
 ---
 layout: default
-title: 你好，中国
+title: 支付宝-高可用
 ---
 <h2>{{ page.title }}</h2>
-<p>我的第二篇文章</p>
+<img id="img" src="https://img.wendangwang.com/pic/a344556b8822b4aec2ccd666/1-810-jpg_6-1080-0-0-1080.jpg"></img>
+<p><a href="#" onclick="prepage(1)">上一页</href>###<a href="#" onclick="prepage(-1)">下一页</href></p>
+<script type="text/javascript">
+  var index = 1;
+  function prepage(step){
+    next=index+step;
+    document.getElementById('img').src=document.getElementById('img').src.replace(index+'-810-jpg',next+'-810-jpg');
+    index = next;
+  }
+</script>
