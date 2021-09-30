@@ -8,8 +8,3 @@ title: 我的Blog
 <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
 </ul>
-
-<textarea id="action"></textarea>
-<form id="frm" method="post" action="">
-  <button onclick="document.getElementById('frm').action=document.getElementById('action').value;document.getElementById('frm').submit();">打开</button>
-</form>
