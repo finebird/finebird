@@ -3,12 +3,19 @@ layout: default
 title: 支付宝-高可用
 ---
 <h2>{{ page.title }}</h2>
+<p><a href="#" onclick="prepage(-1)">上一页</href>###<a href="#" onclick="prepage(1)">下一页</href></p>
 <img id="img" referrerpolicy="no-referrer" src="https://img.wendangwang.com/pic/a344556b8822b4aec2ccd666/1-810-jpg_6-1080-0-0-1080.jpg">
-<p><a href="#" onclick="prepage(1)">上一页</href>###<a href="#" onclick="prepage(-1)">下一页</href></p>
 <script type="text/javascript">
   var index = 1;
   function prepage(step){
     next=index+step;
+    if(next<=0){
+      return;
+    }
+    if(next>40){
+      alert("最后一页了");
+      return;
+    }
     document.getElementById('img').src=document.getElementById('img').src.replace(index+'-810-jpg',next+'-810-jpg');
     index = next;
   }
