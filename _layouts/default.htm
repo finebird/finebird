@@ -6,7 +6,7 @@ img {width:100%;display: inline-block;}
   <title>{{ page.title }}</title>
 </head>
 　　<body>
-<br><a href="{{site.baseurl}}">首页</a>&nbsp;&nbsp;》{{ page.title }}
+    <br><a href="{{site.baseurl}}">首页</a>&nbsp;&nbsp;》{{ page.title }}（<label id="page">1</label>）
 　　{{ content }}
   <img id="img" referrerpolicy="no-referrer" src="{{ page.imgsrc }}">
 <p><a href="#" onclick="prepage(-1)">上一页</a>&nbsp;&nbsp;》<a href="#" onclick="prepage(1)">下一页</a></p>
@@ -23,6 +23,7 @@ img {width:100%;display: inline-block;}
     }
     document.getElementById('img').src=document.getElementById('img').src.replace(index+'{{ page.pattern }}',next+'{{ page.pattern }}');
     index = next;
+    document.getElementById('page').innerHTML=index;
   }
 </script>
 　　</body>
