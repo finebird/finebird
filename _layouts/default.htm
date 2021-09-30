@@ -106,7 +106,24 @@ img {width:100%;display: inline-block;}
   <title>{{ page.title }}</title>
 </head>
 　　<body>
-<span><a href="{{site.baseurl}}">首页</a>&nbsp;&nbsp;》{{ page.title }}
+<p><a href="{{site.baseurl}}">首页</a>&nbsp;&nbsp;》{{ page.title }}
 　　{{ content }}
+  <img id="img" referrerpolicy="no-referrer" src="{{ page.imgsrc }}">
+<p><a href="#" onclick="prepage(-1)">上一页</a>&nbsp;&nbsp;》<a href="#" onclick="prepage(1)">下一页</a></p>
+<script type="text/javascript">
+  var index = 1;
+  function prepage(step){
+    next=index+step;
+    if(next<=0){
+      return;
+    }
+    if(next>{{ page.size }}){
+      alert("最后一页了");
+      return;
+    }
+    document.getElementById('img').src=document.getElementById('img').src.replace(index+'{{ page.pattern }}',next+'{{ page.pattern }}');
+    index = next;
+  }
+</script>
 　　</body>
 　　</html>
