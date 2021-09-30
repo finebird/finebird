@@ -1,7 +1,21 @@
 ---
 layout: default
-title: 你好，世界
+title: 支付宝-金融云
 ---
-<h2>{{ page.title }}</h2>
-<p>我的第一篇文章</p>
-<p>{{ page.date | date_to_string }}</p>
+》{{ page.title }}&nbsp;&nbsp;》<a href="#" onclick="prepage(-1)">上一页</a>&nbsp;&nbsp;》<a href="#" onclick="prepage(1)">下一页</a></p>
+<img id="img" referrerpolicy="no-referrer" src="https://img.wendangwang.com/pic/d7c293fe729bbb84adf7fe2f/1-810-jpg_6-1080-0-0-1080.jpg">
+<script type="text/javascript">
+  var index = 1;
+  function prepage(step){
+    next=index+step;
+    if(next<=0){
+      return;
+    }
+    if(next>30){
+      alert("最后一页了");
+      return;
+    }
+    document.getElementById('img').src=document.getElementById('img').src.replace(index+'-810-jpg',next+'-810-jpg');
+    index = next;
+  }
+</script>
